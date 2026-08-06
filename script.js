@@ -51,7 +51,15 @@ Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
 
 // Skriv koden for oppgave 2 her
 
-const myArrowHere = (string) => {};
+const myString = (string) => {
+  return `${string.toUpperCase() + "!"} `;
+};
+
+console.log(
+  myString(
+    "Nå skal vi ha det gøyt å gjøre hele denne settningen om til svææære bokstaver",
+  ),
+);
 
 /******************************************************************************
 3.
