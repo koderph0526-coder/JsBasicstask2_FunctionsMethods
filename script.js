@@ -126,11 +126,12 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 
 // Skriv koden for oppgave 4 her
 const myExample = ["Higgins", "Hobbins", "Bits", "Meets", "Bobbins"];
-const firstReduct = myExample.shift();
-const secondReduct = firstReduct.pop();
 
-function reduceArr(myExample) {
-  return firstReduct + secondReduct;
+function reduceArr() {
+  // const firstReduct = myExample.shift();  ------> I Mener å huske at dette også skulle fungert i følge undervisning, men nei?
+  const firstReduct = myExample.splice(0, 1); // fjerner første elememtet i array
+  const secondReduct = myExample.pop(); //Fjerner siste elementet i array
+  return myExample;
 }
 console.log(reduceArr());
 
