@@ -22,9 +22,10 @@ funksjonen)
 ******************************************************************************/
 
 // Skriv koden for oppgave 1 her
+
 const isItOdd = (number) => number % 2 !== 0;
 const isItEven = (number) => number % 2 === 0;
-const num = Math.floor(Math.random() * 10);
+const num = Math.floor(Math.random() * 100);
 
 function oddOrEven(number) {
   if (number % 2 !== 0) {
@@ -33,9 +34,9 @@ function oddOrEven(number) {
     return "Partall";
   }
 }
-console.log(oddOrEven(246));
-console.log(oddOrEven(397));
-console.log(oddOrEven()); ///Test it if you'd like.
+console.log(oddOrEven(246)); // Skal nå logges som "Partall"
+console.log(oddOrEven(397)); //Skal nå logges som "Oddetall"
+console.log(oddOrEven(num), num); // Siste eks som viser random tall i consoll loggen ved å laste inn siden på nytt
 
 /******************************************************************************
 2.
@@ -84,6 +85,29 @@ Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
 ******************************************************************************/
 
 // Skriv koden for oppgave 3 her
+//Setter inn en tom let slik at jeg kan hente en tom string jeg kan sette navnet i ved consol.log
+let name = "";
+
+function greetings(name, oclock) {
+  if (oclock <= 5 && oclock > 0) {
+    return `God natt ${name}`;
+  } else if (oclock >= 6 && oclock <= 11) {
+    return `God morgen ${name}`;
+  } else if (oclock >= 12 && oclock <= 17) {
+    return `God dag ${name}`;
+  } else if (oclock >= 18 && oclock <= 23) {
+    return `God kveld ${name}`;
+  } else if (oclock <= 0) {
+    return "Ugyldig tid";
+  } else {
+    return "Ugyldig tid";
+  }
+}
+
+console.log(greetings("Ester", 6));
+//Kjenner jeg stusser på oppgave teksten her, da den ba oss lese nøye og samtidig ikke ber oss om å gjøre consoll log?
+// Skulle jeg heller ha satt inn en call for funskjonen? Setter call under denne kommentaren, men lar consol.log stå for nå.
+greetings();
 
 /******************************************************************************
 4.
@@ -101,6 +125,14 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 ******************************************************************************/
 
 // Skriv koden for oppgave 4 her
+const myExample = ["Higgins", "Hobbins", "Bits", "Meets", "Bobbins"];
+const firstReduct = myExample.shift();
+const secondReduct = firstReduct.pop();
+
+function reduceArr(myExample) {
+  return firstReduct + secondReduct;
+}
+console.log(reduceArr());
 
 /******************************************************************************
 5.
