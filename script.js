@@ -128,12 +128,12 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 const myExample = ["Higgins", "Hobbins", "Bits", "Meets", "Bobbins"];
 
 function reduceArr() {
-  // const firstReduct = myExample.shift();  ------> I Mener å huske at dette også skulle fungert i følge undervisning, men nei?
-  const firstReduct = myExample.splice(0, 1); // fjerner første elememtet i array
+  // const firstReduct = myExample.splice(0, 1); // Annen metode forå fjerne første elememtet i array
+  const firstReduct = myExample.shift(); // Fjerner første elememtet i array
   const secondReduct = myExample.pop(); //Fjerner siste elementet i array
   return myExample;
 }
-console.log(reduceArr());
+// console.log(reduceArr());  ----> kommenterer denne ut da det ikke står noe om å consol logge i denne oppgave teksten heller, spør på mandag
 
 /******************************************************************************
 5.
