@@ -155,6 +155,15 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
 ******************************************************************************/
 
 // Skriv koden for oppgave 5 her
+const firstExString = "  Javascript er vanskelig   ";
+const anotherExString = " Det er vanskelig å bruke metoder ";
+const lastExString = "   vanskelig        ";
+
+function trimAndChange() {
+  const comboOfString = firstExString + anotherExString + lastExString; //Siden alle skulle ha samme endring kombinerer jeg strinegen i en egen const
+  return comboOfString.trim().replaceAll("vanskelig", "gøy"); //trim() for å fjerne whitespace og replaceAll() for endre "vanskelig" til "gøy"
+}
+console.log(trimAndChange());
 
 /******************************************************************************
 6.
