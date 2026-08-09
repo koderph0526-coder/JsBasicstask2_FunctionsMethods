@@ -187,8 +187,22 @@ Steg 4: Kombiner alle elementene i arrayen til en enkelt string ved å bruke " |
 Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder bokstaven "e".
 
 ******************************************************************************/
-
 // Skriv koden for oppgave 6 her
+items.shift(); //Step 1
+items.splice(2, 1, "Linjal"); //Step 2
+items.splice(0, 2, "Makeringspenn"); //Step 3
+const alteredArr = items.join("|"); //Step 4
+console.log(alteredArr);
+//Notat: Ja, jeg skal kunne gjøre alle stegene over i en const utifra hva jeg forstår, men når jeg forsøker så printer den kun "Viskelær", til consol...
+const itemsTwo = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
+const whyTF = itemsTwo
+  .shift()
+  .replace("Viskelær", "Linjal") //Forsøker å bruke replace i stedet, i tilfelle jeg ikke kan bruke splice to ganger i en metode-klynge
+  .splice(0, 2, "Markeingspenn")
+  .join("|");
+
+console.log(itemsTwo);
+//Space to do bonus task
 
 /******************************************************************************
 7.
