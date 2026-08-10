@@ -159,12 +159,13 @@ Eksempel 3: "   vanskelig        " skal returnere "gøy".
 const firstExString = "  Javascript er vanskelig   ";
 const anotherExString = " Det er vanskelig å bruke metoder ";
 const lastExString = "   vanskelig        ";
+const comboOfString = firstExString + anotherExString + lastExString; //Siden alle skulle ha samme endring kombinerer jeg strinegen i en egen const
 
-function trimAndChange() {
-  const comboOfString = firstExString + anotherExString + lastExString; //Siden alle skulle ha samme endring kombinerer jeg strinegen i en egen const
-  return comboOfString.trim().replaceAll("vanskelig", "gøy"); //trim() for å fjerne whitespace og replaceAll() for endre "vanskelig" til "gøy"
+function trimAndChange(array) {
+  array.trim().replaceAll("vanskelig", "gøy"); //trim() for å fjerne whitespace og replaceAll() for endre "vanskelig" til "gøy"
+  return array;
 }
-console.log(trimAndChange());
+console.log(trimAndChange(comboOfString));
 
 /******************************************************************************
 6.
