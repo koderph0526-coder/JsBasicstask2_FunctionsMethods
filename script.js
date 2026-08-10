@@ -197,7 +197,8 @@ const alteredArr = items.join(" | "); //Step 4
 console.log(alteredArr);
 //Notat: Ja, jeg skal kunne gjøre alle stegene over i en const utifra hva jeg forstår, men når jeg forsøker så printer den kun "Viskelær", til consol...
 const itemsTwo = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
-/// Another attempt - Ignore if irrelevant
+
+/// Another attempt: Also tried to include the bonus task of only printing the items that include the letter "e"...
 itemsTwo.shift();
 itemsTwo.splice(2, 1, "Linjal").splice(0, 2, "Markeingspenn").join(" | ");
 
