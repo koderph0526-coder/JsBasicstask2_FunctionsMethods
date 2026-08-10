@@ -127,13 +127,14 @@ Eksempel 2: ["En", "To", "Tre", "Fire", "Fem", "Seks"] skal returnere
 // Skriv koden for oppgave 4 her
 const myExample = ["Higgins", "Hobbins", "Bits", "Meets", "Bobbins"];
 
-function reduceArr() {
-  // const firstReduct = myExample.splice(0, 1); // Annen metode forå fjerne første elememtet i array
-  const firstReduct = myExample.shift(); // Fjerner første elememtet i array
-  const secondReduct = myExample.pop(); //Fjerner siste elementet i array
-  return myExample;
+function reduceArr(arrayFix) {
+  // return arrayFix.slice(1, -1);  --> Another way to get to the same result
+  arrayFix.shift();
+  arrayFix.pop();
+
+  return arrayFix;
 }
-// console.log(reduceArr());  ----> kommenterer denne ut da det ikke står noe om å consol logge i denne oppgave teksten heller, spør på mandag
+console.log(reduceArr(myExample));
 
 /******************************************************************************
 5.
@@ -191,18 +192,23 @@ Ekstra utfordring: Lag et nytt array som kun inkluderer elementer som inneholder
 items.shift(); //Step 1
 items.splice(2, 1, "Linjal"); //Step 2
 items.splice(0, 2, "Makeringspenn"); //Step 3
-const alteredArr = items.join("|"); //Step 4
+const alteredArr = items.join(" | "); //Step 4
 console.log(alteredArr);
 //Notat: Ja, jeg skal kunne gjøre alle stegene over i en const utifra hva jeg forstår, men når jeg forsøker så printer den kun "Viskelær", til consol...
 const itemsTwo = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
-const whyTF = itemsTwo
-  .shift()
-  .replace("Viskelær", "Linjal") //Forsøker å bruke replace i stedet, i tilfelle jeg ikke kan bruke splice to ganger i en metode-klynge
-  .splice(0, 2, "Markeingspenn")
-  .join("|");
+/// Another attempt - Ignore if irrelevant
+itemsTwo.shift();
+itemsTwo.splice(2, 1, "Linjal").splice(0, 2, "Markeingspenn").join(" | ");
 
 console.log(itemsTwo);
 //Space to do bonus task
+// .inludes("e");  --> tanke rundt hvordan, trenger å konvertere tilbake til array og se gjennom hvilke items i arrayet som innholder
+//Joe's ex when asked:
+// const newArrayItems = [];
+// itemsTwo[0];
+// if (itemsTwo.includes("e")) {
+//   newArrayItems.push;
+// }   --------------------------> Never mind, feels like I'd need to go outside of what we've learned in the lessons so far, can fix it when I figure it out during this lesson.
 
 /******************************************************************************
 7.
@@ -227,8 +233,10 @@ Eksempel 3: (["En", "To", "Tre"], "Fire") --> ["En", "To", "Tre", "Fire"]
 Eksempel 4: (["En", "To", "Tre"], "To") --> ["En", "Tre"]
 
 ******************************************************************************/
-
+const arrayDos = ["Red", "Green", "Yellow"];
+const varAttach = "Farger i flertall";
 // Skriv koden for oppgave 7 her
+function dualParameter(arrayDos, varAttach) {}
 
 /******************************************************************************
 8.
