@@ -53,12 +53,12 @@ Eksempel: "Dette er kult" skal returnere "DETTE ER KULT!"
 // Skriv koden for oppgave 2 her
 
 const myString = (string) => {
-  return `${string.toUpperCase() + "!"} `;
+  return `${string.toUpperCase()}! `;
 };
 
 console.log(
   myString(
-    "Nå skal vi ha det gøyt å gjøre hele denne settningen om til svææære bokstaver",
+    "Nå skal vi ha det gøyt og gjøre hele denne settningen om til svææære bokstaver",
   ),
 );
 
@@ -89,7 +89,7 @@ Hvis ingen timeverdi mottas, skal funksjonen returnere en feilmelding.
 let name = "";
 
 function greetings(name, oclock) {
-  if (oclock <= 5 && oclock > 0) {
+  if (oclock <= 5 && oclock >= 0) {
     return `God natt ${name}`;
   } else if (oclock >= 6 && oclock <= 11) {
     return `God morgen ${name}`;
@@ -100,11 +100,11 @@ function greetings(name, oclock) {
   } else if (oclock <= 0) {
     return "Ugyldig tid";
   } else {
-    return "Ugyldig tid";
+    return "Error: Ugyldig tid";
   }
 }
 
-console.log(greetings("Ester", 6));
+console.log(greetings("Esther", 19));
 //Kjenner jeg stusser på oppgave teksten her, da den ba oss lese nøye og samtidig ikke ber oss om å gjøre consoll log?
 // Skulle jeg heller ha satt inn en call for funskjonen? Setter call under denne kommentaren, men lar consol.log stå for nå.
 greetings();
@@ -162,8 +162,7 @@ const lastExString = "   vanskelig        ";
 const comboOfString = firstExString + anotherExString + lastExString; //Siden alle skulle ha samme endring kombinerer jeg strinegen i en egen const
 
 function trimAndChange(array) {
-  array.trim().replaceAll("vanskelig", "gøy"); //trim() for å fjerne whitespace og replaceAll() for endre "vanskelig" til "gøy"
-  return array;
+  return array.trim().replaceAll("vanskelig", "gøy"); //trim() for å fjerne whitespace og replaceAll() for endre "vanskelig" til "gøy"
 }
 console.log(trimAndChange(comboOfString));
 
@@ -195,22 +194,35 @@ items.splice(2, 1, "Linjal"); //Step 2
 items.splice(0, 2, "Makeringspenn"); //Step 3
 const alteredArr = items.join(" | "); //Step 4
 console.log(alteredArr);
+//
 //Notat: Ja, jeg skal kunne gjøre alle stegene over i en const utifra hva jeg forstår, men når jeg forsøker så printer den kun "Viskelær", til consol...
-const itemsTwo = ["Bok", "Penn", "Notatbok", "Viskelær", "Blyant", "Markør"];
+const itemsTwo = [
+  "Bok",
+  "Penn",
+  "Notatbok",
+  "Viskelær",
+  "Blyant",
+  "Markør",
+  "Passer",
+  "Penal",
+];
+//La til to elementer i arrayet for å kunne sjekke at filter metoden fungerer på alle elementene.
 
-/// Another attempt: Also tried to include the bonus task of only printing the items that include the letter "e"...
+/// Another attempt = Is now focused on the bonus task
 itemsTwo.shift();
-itemsTwo.splice(2, 1, "Linjal").splice(0, 2, "Markeingspenn").join(" | ");
+itemsTwo.splice(2, 1, "Linjal");
+itemsTwo.splice(0, 2, "Markeingspenn").join(" | ");
+const eItems = itemsTwo.filter((item) => item.includes("e")); //Vi har ikke gått gjennom .filter() i undervisning, men antar det handler om at vi skal bli flinkere på å google oss frem til løsninger
 
-console.log(itemsTwo);
-//Space to do bonus task
+console.log(eItems);
+//Beholder kommentarene/notat under for å kunne studere videre om det er en løsning som kunne fungert med denne typen tankegang også.
 // .inludes("e");  --> tanke rundt hvordan, trenger å konvertere tilbake til array og se gjennom hvilke items i arrayet som innholder
 //Joe's ex when asked:
 // const newArrayItems = [];
 // itemsTwo[0];
 // if (itemsTwo.includes("e")) {
 //   newArrayItems.push;
-// }   --------------------------> Never mind, feels like I'd need to go outside of what we've learned in the lessons so far, can fix it when I figure it out during this lesson.
+// }
 
 /******************************************************************************
 7.
@@ -235,11 +247,14 @@ Eksempel 3: (["En", "To", "Tre"], "Fire") --> ["En", "To", "Tre", "Fire"]
 Eksempel 4: (["En", "To", "Tre"], "To") --> ["En", "Tre"]
 
 ******************************************************************************/
-const arrayDos = ["Red", "Green", "Yellow"];
-const varAttach = "Farger i flertall";
+const arrayDos = [];
 // Skriv koden for oppgave 7 her
-function dualParameter(arrayDos, varAttach) {}
+function dualParameter(arrEdit, stringEdit) {
+  arrayDos.push("Blå");
+}
+console.log(dualParameter(["Rød", "Grønn"], "Blå"));
 
+// Glem det... Trodde jeg hadde klart å finne ut av det, men ikke per nå...
 /******************************************************************************
 8.
 
